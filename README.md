@@ -3,16 +3,16 @@
 
 ##users　テーブル
 
-| Column             | Type      | Options          |
-| -------------------| ----------| -----------------|
-| nickname           | string    | unique: true     |
-| email              | string    | unique: true     |
-| encrypted_password | string    | null: false      |
-| name_kanji_last    | string    | null: false      |
-| name_kanji_first   | string    | null: false      |
-| name_kana_last     | string    | null: false      |
-| name_kana_first    | string    | null: false      |
-| birthday           | date      | null: false      |
+| Column             | Type      | Options                       |
+| -------------------| ----------| ------------------------------|
+| nickname           | string    | unique: true, null: false     |
+| email              | string    | unique: true, null: false     |
+| encrypted_password | string    | null: false                   |
+| name_kanji_last    | string    | null: false                   |
+| name_kanji_first   | string    | null: false                   |
+| name_kana_last     | string    | null: false                   |
+| name_kana_first    | string    | null: false                   |
+| birthday           | date      | null: false                   |
 
 
 ### Association
@@ -24,7 +24,7 @@
 
 | Column             | Type      | Options          |
 | -------------------| ----------| -----------------|
-| item_name          | string    | null: false      |
+| name               | string    | null: false      |
 | explanation        | text      | null: false      |
 | category_id        | integer   | null: false      |
 | condition_id       | integer   | null: false      |

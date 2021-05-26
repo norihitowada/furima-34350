@@ -1,3 +1,4 @@
+
 #テーブル設計
 
 ##users　テーブル
@@ -68,3 +69,4 @@
 - belongs_to :users
 - belongs_to :items
 - belongs_to :purchase_records
+

@@ -5,7 +5,7 @@
 
 | Column             | Type      | Options                       |
 | -------------------| ----------| ------------------------------|
-| nickname           | string    | unique: true, null: false     |
+| nickname           | string    | null: false                   |
 | email              | string    | unique: true, null: false     |
 | encrypted_password | string    | null: false                   |
 | name_kanji_last    | string    | null: false                   |
@@ -29,7 +29,7 @@
 | category_id        | integer   | null: false      |
 | condition_id       | integer   | null: false      |
 | delivery_cost_id   | integer   | null: false      |
-| ship_from_id       | integer   | null: false      |
+| prefecture_id      | integer   | null: false      |
 | day_id             | integer   | null: false      |
 | price              | integer   | null: false      |
 | user               | reference | foreign_key: true|

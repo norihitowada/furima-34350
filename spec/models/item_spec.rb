@@ -36,7 +36,7 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
       it '販売価格はidが300から9,999,999の範囲で登録できる' do
-        @item.prefecture_id = 10000
+        @item.prefecture_id = 10_000
         expect(@item).to be_valid
       end
       context '出品できないとき' do
@@ -91,7 +91,7 @@ RSpec.describe Item, type: :model do
           expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
         end
         it '販売価格が10,000,000以上では登録できない' do
-          @item.price = 10000000
+          @item.price = 10_000_000
           @item.valid?
           expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
         end
@@ -110,9 +110,6 @@ RSpec.describe Item, type: :model do
           @item.valid?
           expect(@item.errors.full_messages).to include('User must exist')
         end
-
-
-
       end
     end
   end

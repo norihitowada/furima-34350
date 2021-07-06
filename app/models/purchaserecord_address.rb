@@ -1,6 +1,6 @@
 class PurchaserecordAddress
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :zip_code, :prefecture_id, :city, :street_number, :building, :phone_number
+  attr_accessor :user_id, :item_id, :zip_code, :prefecture_id, :city, :street_number, :building, :phone_number, :token
 
   with_options presence: true do
   validates :zip_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
@@ -8,6 +8,7 @@ class PurchaserecordAddress
   validates :city
   validates :street_number
   validates :phone_number, numericality: { less_than_or_equal_to: 99999999999 }
+  validates :token
   end
 
   def save

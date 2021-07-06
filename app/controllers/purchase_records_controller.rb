@@ -2,9 +2,10 @@ class PurchaseRecordsController < ApplicationController
   before_action :authenticate_user!
   before_action :confirmation
   before_action :move
+  before_action :purchase, only: [:index, :create]
+
 
   def index
-    @item = Item.find(params[:item_id])
     @purchase_record = PurchaserecordAddress.new
   end
 
@@ -15,12 +16,15 @@ class PurchaseRecordsController < ApplicationController
       @purchase_record.save
       redirect_to root_path
     else
-      @item = Item.find(params[:item_id])
       render :index
     end
   end
 
   private
+
+  def purchase
+    @item = Item.find(params[:item_id])
+  end
 
   def purchase_params
     params.require(:purchaserecord_address).permit(:zip_code, :prefecture_id, :city, :street_number, :building, :phone_number).merge(

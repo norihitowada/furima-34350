@@ -35,7 +35,7 @@ RSpec.describe PurchaserecordAddress, type: :model do
         expect(@purchaserecord_address.errors.full_messages).to include("Prefecture can't be blank")
       end
       it 'prefectureが１を選択された場合は登録できない' do
-        @purchaserecord_address.prefecture_id = '1'
+        @purchaserecord_address.prefecture_id = 1
         @purchaserecord_address.valid?
         expect(@purchaserecord_address.errors.full_messages).to include("Prefecture must be other than 1")
       end

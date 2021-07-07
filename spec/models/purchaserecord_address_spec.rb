@@ -72,12 +72,12 @@ RSpec.describe PurchaserecordAddress, type: :model do
       it 'userが紐づいていないと登録できない' do
         @purchaserecord_address.user_id = nil
         @purchaserecord_address.valid?
-        expect(@purchaserecord_address.errors.full_messages).to include()
+        expect(@purchaserecord_address.errors.full_messages).to include("User can't be blank")
       end
       it 'itemが紐づいていないと登録できない' do
         @purchaserecord_address.item_id = nil
         @purchaserecord_address.valid?
-        expect(@purchaserecord_address.errors.full_messages).to include()
+        expect(@purchaserecord_address.errors.full_messages).to include("Item can't be blank")
       end
 
     end

@@ -9,6 +9,8 @@ class PurchaserecordAddress
     validates :street_number
     validates :phone_number, numericality: { less_than_or_equal_to: 99_999_999_999 }
     validates :token
+    validates :user_id
+    validates :item_id
   end
 
   def save

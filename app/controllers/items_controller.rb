@@ -15,6 +15,10 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -58,4 +62,5 @@ class ItemsController < ApplicationController
   def move_to_index
     redirect_to action: :index if @item.purchase_record.present?
   end
+
 end

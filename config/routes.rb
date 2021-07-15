@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
  resources :items do
   resources :purchase_records, only: [:index, :create]
+  collection do
+      get 'search'
+    end
  end
  
 
